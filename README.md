@@ -1,93 +1,56 @@
-Customer Segmentation using K-Means Clustering
-Overview
-This project performs customer segmentation on credit card customer data using K-Means clustering. The goal is to identify distinct groups of customers based on their spending habits, payment behaviors, and credit usage patterns. These segments can then be used for targeted marketing, customer retention strategies, and business decision-making.
+# Customer Segmentation using K-Means Clustering
 
-Dataset
+## 📌 Overview
+This project performs customer segmentation on credit card customer data using K-Means clustering to identify distinct customer groups based on their spending and payment behaviors.
+
+## 📊 Dataset
 The dataset contains 8,950 customer records with 18 features including:
 
-BALANCE: Credit card balance
+| Feature | Description |
+|---------|-------------|
+| `BALANCE` | Credit card balance |
+| `PURCHASES` | Total purchase amount |
+| `CASH_ADVANCE` | Cash advance amount |
+| `CREDIT_LIMIT` | Customer's credit limit |
+| `PAYMENTS` | Payment amounts |
+| `TENURE` | Duration as customer (in months) |
 
-PURCHASES: Total purchase amount
+## 🔧 Methodology
+1. **Data Preprocessing**:
+   - Handled missing values
+   - Removed highly correlated features
+   - Standardized features using `StandardScaler`
 
-CASH_ADVANCE: Cash advance amount
+2. **Clustering**:
+   - Used Elbow Method to determine optimal clusters (k=7)
+   - Applied K-Means clustering
+   - Silhouette Score: 0.227
 
-CREDIT_LIMIT: Customer's credit limit
+3. **Analysis**:
+   - Visualized clusters using PCA
+   - Analyzed cluster characteristics
+   - Developed business recommendations
 
-PAYMENTS: Payment amounts
+## 📈 Results
+Identified 7 customer segments:
 
-TENURE: Duration as customer (in months)
+| Cluster | Characteristics |
+|---------|-----------------|
+| 0 | Potential Revolvers - High balance, frequent cash advances |
+| 1 | Transactors - Pays full balance often |
+| 2 | VIP Customers - High installment purchases |
+| 3 | Moderate Users - Balanced spending |
+| 4 | High Spenders - Very high purchases |
+| 5 | One-Off Purchasers | 
+| 6 | At-Risk Customers - Low activity |
 
-Methodology
-Data Preprocessing:
+## 💡 Business Applications
+- **Targeted Marketing**: Different strategies per segment
+- **Customer Retention**: Focus on at-risk segments
+- **Risk Management**: Monitor high cash advance users
 
-Handled missing values (imputed median for MINIMUM_PAYMENTS, mode for CREDIT_LIMIT)
-
-Removed highly correlated features
-
-Standardized features using StandardScaler
-
-Clustering:
-
-Used the Elbow Method to determine optimal number of clusters (k=7)
-
-Applied K-Means clustering
-
-Evaluated with Silhouette Score (0.227)
-
-Analysis:
-
-Visualized clusters using PCA (Principal Component Analysis)
-
-Analyzed cluster characteristics
-
-Developed business recommendations for each segment
-
-Key Findings
-The analysis identified 7 distinct customer segments:
-
-Potential Revolvers: High balance, frequent cash advances
-
-Transactors: Low cash advance usage, often pays full balance
-
-VIP Customers: High installment purchases
-
-Moderate Users: Balanced spending patterns
-
-High Spenders: Very high purchases and credit limits
-
-One-Off Purchasers: Frequent single purchases
-
-At-Risk Customers: Low activity and spending
-
-Business Applications
-Targeted Marketing: Different strategies for each segment
-
-Customer Retention: Focus on at-risk segments
-
-Credit Risk Management: Monitor high cash advance users
-
-Product Development: Create features for specific segments
-
-Files
-Customer_Data.csv: Input dataset
-
-Customer_Segmentation.ipynb: Jupyter notebook with full analysis
-
-Requirements
-Python 3.x
-
-Libraries: pandas, numpy, matplotlib, seaborn, scikit-learn
-
-How to Run
-Install required packages: pip install -r requirements.txt
-
-Run the Jupyter notebook: jupyter notebook Customer_Segmentation.ipynb
-
-Future Work
-Experiment with other clustering algorithms (DBSCAN, Hierarchical)
-
-Incorporate more features for richer segmentation
-
-Develop real-time customer segmentation system
-
-
+## 🛠️ Installation
+```bash
+git clone https://github.com/yourusername/customer-segmentation.git
+cd customer-segmentation
+pip install -r requirements.txt
